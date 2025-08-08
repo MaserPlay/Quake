@@ -402,15 +402,9 @@ int WINS_Read (int socket, byte *buf, int len, struct qsockaddr *addr)
 	ret = precvfrom (socket, buf, len, 0, (struct sockaddr *)addr, &addrlen);
 	if (ret == -1)
 	{
-<<<<<<< HEAD
 		int _errno = pWSAGetLastError();
 
 		if (_errno == WSAEWOULDBLOCK || _errno == WSAECONNREFUSED)
-=======
-		int errno = pWSAGetLastError();
-
-		if (errno == WSAEWOULDBLOCK || errno == WSAECONNREFUSED)
->>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 			return 0;
 
 	}
