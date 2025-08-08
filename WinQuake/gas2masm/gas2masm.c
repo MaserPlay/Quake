@@ -33,7 +33,11 @@ typedef enum {NOT_WHITESPACE, WHITESPACE, TOKEN_AVAILABLE, LINE_DONE, FILE_DONE,
 typedef enum {NOSEG, DATASEG, TEXTSEG} segtype;
 
 int		tokennum;
+<<<<<<< HEAD
 int		___inline, outline;
+=======
+int		inline, outline;
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 
 char	*token;
 char	tokens[MAX_TOKENS][MAX_TOKEN_LENGTH+1];
@@ -758,7 +762,11 @@ int	numparse = sizeof (parsedata) / sizeof (parsedata[0]);
 
 void errorexit (void)
 {
+<<<<<<< HEAD
 	fprintf (stderr, "In line: %d, out line: %d\n", ___inline, outline);
+=======
+	fprintf (stderr, "In line: %d, out line: %d\n", inline, outline);
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 	exit (1);
 }
 
@@ -1025,13 +1033,21 @@ void main (int argc, char **argv)
 
 	printf (" .386P\n"
             " .model FLAT\n");
+<<<<<<< HEAD
 	___inline = 1;
+=======
+	inline = 1;
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 	outline = 3;
 
 	for ( ;; )
 	{
 		stat = parseline ();
+<<<<<<< HEAD
 		___inline++;
+=======
+		inline++;
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 
 		switch (stat)
 		{

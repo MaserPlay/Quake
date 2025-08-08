@@ -175,18 +175,30 @@ qboolean NET_GetPacket (void)
 
 	if (ret == -1)
 	{
+<<<<<<< HEAD
 		int _errno = WSAGetLastError();
 
 		if (_errno == WSAEWOULDBLOCK)
 			return false;
 		if (_errno == WSAEMSGSIZE) {
+=======
+		int errno = WSAGetLastError();
+
+		if (errno == WSAEWOULDBLOCK)
+			return false;
+		if (errno == WSAEMSGSIZE) {
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 			Con_Printf ("Warning:  Oversize packet from %s\n",
 				NET_AdrToString (net_from));
 			return false;
 		}
 
 
+<<<<<<< HEAD
 		Sys_Error ("NET_GetPacket: %s", strerror(_errno));
+=======
+		Sys_Error ("NET_GetPacket: %s", strerror(errno));
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 	}
 
 	net_message.cursize = ret;

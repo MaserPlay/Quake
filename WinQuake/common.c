@@ -1605,6 +1605,10 @@ byte *COM_LoadStackFile (char *path, void *buffer, int bufsize)
 	
 	return buf;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 /*
 =================
 COM_LoadPackFile
@@ -1746,6 +1750,7 @@ void COM_InitFilesystem (void)
 
 	j = strlen (basedir);
 
+<<<<<<< HEAD
 	// Trim quotes
 	if (basedir[0] == '"' && basedir[j - 1] == '"')
 	{
@@ -1755,6 +1760,8 @@ void COM_InitFilesystem (void)
 
 	j = strlen(basedir);
 
+=======
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 	if (j > 0)
 	{
 		if ((basedir[j-1] == '\\') || (basedir[j-1] == '/'))

@@ -243,9 +243,15 @@ int WIPX_Read (int handle, byte *buf, int len, struct qsockaddr *addr)
 	ret = precvfrom (socket, packetBuffer, len+4, 0, (struct sockaddr *)addr, &addrlen);
 	if (ret == -1)
 	{
+<<<<<<< HEAD
 		int _errno = pWSAGetLastError();
 
 		if (_errno == WSAEWOULDBLOCK || _errno == WSAECONNREFUSED)
+=======
+		int errno = pWSAGetLastError();
+
+		if (errno == WSAEWOULDBLOCK || errno == WSAECONNREFUSED)
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 			return 0;
 
 	}
@@ -357,7 +363,11 @@ int WIPX_GetSocketAddr (int handle, struct qsockaddr *addr)
 	Q_memset(addr, 0, sizeof(struct qsockaddr));
 	if(pgetsockname(socket, (struct sockaddr *)addr, &addrlen) != 0)
 	{
+<<<<<<< HEAD
 		int _errno = pWSAGetLastError();
+=======
+		int errno = pWSAGetLastError();
+>>>>>>> bf4ac424ce754894ac8f1dae6a3981954bc9852d
 	}
 
 	return 0;
